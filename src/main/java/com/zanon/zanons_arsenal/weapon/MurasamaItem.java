@@ -2,14 +2,13 @@ package com.zanon.zanons_arsenal.weapon;
 
 import java.util.function.Consumer;
 
-import com.zanon.zanons_arsenal.ZanonsArsenal;
 import com.zanon.zanons_arsenal.registry.ModComponents;
 import com.zanon.zanons_arsenal.registry.ModParticles;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -18,6 +17,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -37,7 +37,7 @@ public class MurasamaItem extends Item implements ArsenalItem {
     /** Tooltip attack damage. Vanilla adds the player's base 1 on top of the modifier. */
     public static final float MELEE_DAMAGE = 15.0F;
     /** Attacks per second. A vanilla sword is 1.6. */
-    public static final double MELEE_SPEED = 2.4D;
+    public static final double MELEE_SPEED = 2.2D;
     public static final float SKILL_DAMAGE = 50.0F;
     /** Ten seconds. */
     public static final int SKILL_COOLDOWN_TICKS = 200;
@@ -48,9 +48,6 @@ public class MurasamaItem extends Item implements ArsenalItem {
     private static final double PLAYER_BASE_ATTACK_DAMAGE = 1.0D;
     private static final double PLAYER_BASE_ATTACK_SPEED = 4.0D;
 
-    private static final Identifier ATTACK_DAMAGE_ID = Identifier.fromNamespaceAndPath(ZanonsArsenal.MOD_ID, "murasama_attack_damage");
-    private static final Identifier ATTACK_SPEED_ID = Identifier.fromNamespaceAndPath(ZanonsArsenal.MOD_ID, "murasama_attack_speed");
-
     private static final SwingAnimation SHEATHED_SWING = new SwingAnimation(SwingAnimationType.NONE, 6);
     private static final SwingAnimation DRAWN_SWING = new SwingAnimation(SwingAnimationType.WHACK, 5);
 
@@ -58,12 +55,12 @@ public class MurasamaItem extends Item implements ArsenalItem {
     private static final ItemAttributeModifiers DRAWN_MODIFIERS = ItemAttributeModifiers.builder()
             .add(
                     Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(ATTACK_DAMAGE_ID, MELEE_DAMAGE - PLAYER_BASE_ATTACK_DAMAGE, AttributeModifier.Operation.ADD_VALUE),
+                    new AttributeModifier(Item.BASE_ATTACK_DAMAGE_ID, MELEE_DAMAGE - PLAYER_BASE_ATTACK_DAMAGE, AttributeModifier.Operation.ADD_VALUE),
                     EquipmentSlotGroup.MAINHAND
             )
             .add(
                     Attributes.ATTACK_SPEED,
-                    new AttributeModifier(ATTACK_SPEED_ID, MELEE_SPEED - PLAYER_BASE_ATTACK_SPEED, AttributeModifier.Operation.ADD_VALUE),
+                    new AttributeModifier(Item.BASE_ATTACK_SPEED_ID, MELEE_SPEED - PLAYER_BASE_ATTACK_SPEED, AttributeModifier.Operation.ADD_VALUE),
                     EquipmentSlotGroup.MAINHAND
             )
             .build();
@@ -215,13 +212,35 @@ public class MurasamaItem extends Item implements ArsenalItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag) {
-        tooltip.accept(Component.translatable("rarity.zanons_arsenal.legendary").withStyle(ChatFormatting.GOLD));
+        tooltip.accept(Component.translatable("rarity.zanons_arsenal.legendary").withStyle(definition().rarity().color()));
         tooltip.accept(Component.translatable(isSheathed(stack)
                 ? "item.zanons_arsenal.murasama.sheathed"
                 : "item.zanons_arsenal.murasama.drawn").withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable(
+                "item.zanons_arsenal.press_mode",
+                Component.keybind("key.zanons_arsenal.mode")
+        ).withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable(
+                "item.zanons_arsenal.press_skill",
+                Component.keybind("key.zanons_arsenal.skill")
+        ).withStyle(ChatFormatting.GRAY));
+        tooltip.accept(Component.translatable("item.zanons_arsenal.murasama.skill").withStyle(ChatFormatting.RED));
         if (isSheathed(stack)) {
-            tooltip.accept(Component.translatable("item.zanons_arsenal.murasama.skill").withStyle(ChatFormatting.RED));
+            appendHeldStats(tooltip, flag);
         }
-        tooltip.accept(Component.translatable("item.zanons_arsenal.murasama.mode").withStyle(ChatFormatting.DARK_GRAY));
+    }
+
+    /** Sheathed stacks have no attack modifiers, so the held-stat lines are written here. Drawn stacks get them from the item component. */
+    private static void appendHeldStats(Consumer<Component> tooltip, TooltipFlag flag) {
+        tooltip.accept(CommonComponents.EMPTY);
+        tooltip.accept(Component.translatable("item.modifiers.mainhand").withStyle(ChatFormatting.GRAY));
+        appendBaseStat(tooltip, Attributes.ATTACK_DAMAGE.value(), MELEE_DAMAGE, PLAYER_BASE_ATTACK_DAMAGE, flag);
+        appendBaseStat(tooltip, Attributes.ATTACK_SPEED.value(), MELEE_SPEED, PLAYER_BASE_ATTACK_SPEED, flag);
+    }
+
+    private static void appendBaseStat(Consumer<Component> tooltip, Attribute attribute, double value, double entityBase, TooltipFlag flag) {
+        tooltip.accept(Component.literal(" ")
+                .append(attribute.toBaseComponent(value, entityBase, false, flag))
+                .withStyle(ChatFormatting.DARK_GREEN));
     }
 }
