@@ -1,0 +1,166 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"parent": "zanons_arsenal:weapon/display/katana",
+	"textures": {
+		"particle": "zanons_arsenal:weapon/murasama",
+		"blade": "zanons_arsenal:weapon/murasama"
+	},
+	"elements": [
+		{
+			"name": "scabbard",
+			"from": [7, 8.25, 8.25],
+			"to": [8, 20.25, 8.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.15, -0.65, 1]},
+			"faces": {
+				"north": {"uv": [14, 0.5, 13, 12.5], "texture": "#blade"},
+				"east": {"uv": [12.5, 0.5, 12, 12.5], "texture": "#blade"},
+				"south": {"uv": [13, 0.5, 14, 12.5], "texture": "#blade"},
+				"west": {"uv": [12.5, 0.5, 13, 12.5], "texture": "#blade"},
+				"up": {"uv": [13, 0, 14, 0.5], "texture": "#blade"},
+				"down": {"uv": [14, 0, 13, 0.5], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "mouth",
+			"from": [6.5, 7.75, 8],
+			"to": [8.5, 8.25, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.5, 7.75, 7]},
+			"faces": {
+				"north": {"uv": [14, 15, 12, 15.5], "texture": "#blade"},
+				"east": {"uv": [13.5, 15.5, 12.5, 16], "texture": "#blade"},
+				"south": {"uv": [14, 15, 12, 15.5], "texture": "#blade"},
+				"west": {"uv": [12.5, 15.5, 13.5, 16], "texture": "#blade"},
+				"up": {"uv": [9.5, 15, 11.5, 16], "texture": "#blade"},
+				"down": {"uv": [11.5, 15, 9.5, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"from": [6.75, 10, 8],
+			"to": [8.25, 12.5, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.75, 10, 8]},
+			"faces": {
+				"north": {"uv": [9.5, 14.5, 11.5, 16], "texture": "#blade"},
+				"east": {"uv": [10.5, 14, 11.5, 16], "texture": "#blade"},
+				"south": {"uv": [11.5, 14.5, 9.5, 16], "texture": "#blade"},
+				"west": {"uv": [9.5, 15, 11.5, 16], "rotation": 90, "texture": "#blade"},
+				"up": {"uv": [12, 11.5, 14, 12.5], "texture": "#blade"},
+				"down": {"uv": [12, 11.5, 13.75, 12.5], "texture": "#blade"}
+			}
+		},
+		{
+			"from": [6.75, 10.5, 8.25],
+			"to": [8.75, 12, 8.75],
+			"rotation": {"angle": -10, "axis": "z", "origin": [6.75, 10.5, 8.25]},
+			"faces": {
+				"north": {"uv": [12, 13.5, 13.5, 15.5], "rotation": 90, "texture": "#blade"},
+				"east": {"uv": [12, 15, 13.5, 15.5], "rotation": 90, "texture": "#blade"},
+				"south": {"uv": [12, 15.5, 13.5, 13.5], "rotation": 90, "texture": "#blade"},
+				"west": {"uv": [12, 15, 13.5, 15.5], "rotation": 90, "texture": "#blade"},
+				"up": {"uv": [12, 14.5, 14, 15], "texture": "#blade"},
+				"down": {"uv": [12, 14.5, 14, 15], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "trigger",
+			"from": [8, 8.5, 8.5],
+			"to": [8.5, 9, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8, 8.5, 8.5]},
+			"faces": {
+				"north": {"uv": [15.5, 0, 16, 0.5], "texture": "#blade"},
+				"east": {"uv": [2, 1.5, 2, 2], "texture": "#blade"},
+				"south": {"uv": [16, 0, 15.5, 0.5], "texture": "#blade"},
+				"west": {"uv": [0, 1.5, 0, 2], "texture": "#blade"},
+				"up": {"uv": [0, 0, 0.5, 0], "texture": "#blade"},
+				"down": {"uv": [0, 2, 0.5, 2], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "hilt",
+			"from": [7, 4, 8.25],
+			"to": [8, 7, 8.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.45, -9, 0.7]},
+			"faces": {
+				"north": {"uv": [13.5, 12.5, 12.5, 15.5], "texture": "#blade"},
+				"east": {"uv": [12.5, 12.5, 12, 15.5], "texture": "#blade"},
+				"south": {"uv": [12.5, 12.5, 13.5, 15.5], "texture": "#blade"},
+				"west": {"uv": [13.5, 12.5, 14, 15.5], "texture": "#blade"},
+				"up": {"uv": [13.5, 15.5, 12.5, 16], "texture": "#blade"},
+				"down": {"uv": [12.5, 15.5, 13.5, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "guard",
+			"from": [6.5, 7, 8],
+			"to": [8.5, 7.5, 9],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3.1, -8.6, 1.45]},
+			"faces": {
+				"north": {"uv": [9.5, 14.5, 11.5, 15], "texture": "#blade"},
+				"east": {"uv": [10.5, 14, 11.5, 14.5], "texture": "#blade"},
+				"south": {"uv": [11.5, 14.5, 9.5, 15], "texture": "#blade"},
+				"west": {"uv": [11.5, 14, 10.5, 14.5], "texture": "#blade"},
+				"up": {"uv": [9.5, 15, 11.5, 16], "texture": "#blade"},
+				"down": {"uv": [11.5, 15, 9.5, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7, 7, 8.5],
+			"to": [8, 19, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.55, -9.1, 0.72]},
+			"faces": {
+				"north": {"uv": [15, 4, 16, 16], "texture": "#blade"},
+				"east": {"uv": [0, 0, 0, 12], "texture": "#blade"},
+				"south": {"uv": [14, 4, 15, 16], "texture": "#blade"},
+				"west": {"uv": [0, 0, 0, 12], "texture": "#blade"},
+				"up": {"uv": [14, 16, 15, 16], "texture": "#blade"},
+				"down": {"uv": [14, 16, 15, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "tip",
+			"from": [7, 19, 8.5],
+			"to": [7.5, 19.5, 8.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.55, 2.9, 0.72]},
+			"faces": {
+				"north": {"uv": [15.5, 3.25, 16, 3.75], "texture": "#blade"},
+				"east": {"uv": [15.5, 3.25, 15.5, 3.75], "texture": "#blade"},
+				"south": {"uv": [15.5, 3.25, 16, 3.75], "texture": "#blade"},
+				"west": {"uv": [15.5, 3.25, 15.5, 3.75], "texture": "#blade"},
+				"up": {"uv": [15.5, 3.25, 16, 3.25], "texture": "#blade"},
+				"down": {"uv": [15.5, 3.25, 16, 3.25], "texture": "#blade"}
+			}
+		}
+	],
+	"display": {
+		"head": {
+			"rotation": [70, 90, 0],
+			"translation": [3.5, 10.25, -4.75],
+			"scale": [2, 2, 2]
+		}
+	},
+	"groups": [
+		{
+			"name": "sheathed",
+			"origin": [8, 8.5, 8.5],
+			"scope": 0,
+			"color": 0,
+			"children": [
+				{
+					"name": "scabbard",
+					"origin": [8, 8.5, 8.5],
+					"scope": 0,
+					"color": 0,
+					"children": [0, 1, 2, 3, 4]
+				},
+				{
+					"name": "murasama",
+					"origin": [-0.55, 3.9, -0.28],
+					"scope": 0,
+					"color": 0,
+					"children": [5, 6, 7, 8]
+				}
+			]
+		}
+	]
+}

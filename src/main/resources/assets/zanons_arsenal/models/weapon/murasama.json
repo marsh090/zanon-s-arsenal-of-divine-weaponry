@@ -1,0 +1,100 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"parent": "zanons_arsenal:weapon/display/katana",
+	"textures": {
+		"particle": "zanons_arsenal:weapon/murasama",
+		"blade": "zanons_arsenal:weapon/murasama"
+	},
+	"elements": [
+		{
+			"name": "hilt",
+			"from": [7, 5, 7.25],
+			"to": [8, 8, 7.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.45, -8, -0.3]},
+			"faces": {
+				"north": {"uv": [13.5, 12.5, 12.5, 15.5], "texture": "#blade"},
+				"east": {"uv": [12.5, 12.5, 12, 15.5], "texture": "#blade"},
+				"south": {"uv": [12.5, 12.5, 13.5, 15.5], "texture": "#blade"},
+				"west": {"uv": [13.5, 12.5, 14, 15.5], "texture": "#blade"},
+				"up": {"uv": [13.5, 15.5, 12.5, 16], "texture": "#blade"},
+				"down": {"uv": [12.5, 15.5, 13.5, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "guard",
+			"from": [6.5, 8, 7],
+			"to": [8.5, 8.5, 8],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-3.1, -7.6, 0.45]},
+			"faces": {
+				"north": {"uv": [9.5, 14.5, 11.5, 15], "texture": "#blade"},
+				"east": {"uv": [10.5, 14, 11.5, 14.5], "texture": "#blade"},
+				"south": {"uv": [11.5, 14.5, 9.5, 15], "texture": "#blade"},
+				"west": {"uv": [11.5, 14, 10.5, 14.5], "texture": "#blade"},
+				"up": {"uv": [9.5, 15, 11.5, 16], "texture": "#blade"},
+				"down": {"uv": [11.5, 15, 9.5, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "blade",
+			"from": [7, 8, 7.5],
+			"to": [8, 20, 7.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.55, -8.1, -0.28]},
+			"faces": {
+				"north": {"uv": [15, 4, 16, 16], "texture": "#blade"},
+				"east": {"uv": [0, 0, 0, 12], "texture": "#blade"},
+				"south": {"uv": [14, 4, 15, 16], "texture": "#blade"},
+				"west": {"uv": [0, 0, 0, 12], "texture": "#blade"},
+				"up": {"uv": [14, 16, 15, 16], "texture": "#blade"},
+				"down": {"uv": [14, 16, 15, 16], "texture": "#blade"}
+			}
+		},
+		{
+			"name": "tip",
+			"from": [7, 20, 7.5],
+			"to": [7.5, 20.5, 7.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [-0.55, 3.9, -0.28]},
+			"faces": {
+				"north": {"uv": [15.5, 3.25, 16, 3.75], "texture": "#blade"},
+				"east": {"uv": [15.5, 3.25, 15.5, 3.75], "texture": "#blade"},
+				"south": {"uv": [15.5, 3.25, 16, 3.75], "texture": "#blade"},
+				"west": {"uv": [15.5, 3.25, 15.5, 3.75], "texture": "#blade"},
+				"up": {"uv": [15.5, 3.25, 16, 3.25], "texture": "#blade"},
+				"down": {"uv": [15.5, 3.25, 16, 3.25], "texture": "#blade"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, 90, 0],
+			"translation": [1, 0.25, 0.25],
+			"scale": [2, 2, 2]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 0.25, 0.25],
+			"scale": [2, 2, 2]
+		},
+		"firstperson_righthand": {
+			"rotation": [-84.37, 77.91, 73.4],
+			"translation": [3.5, 1.25, 0],
+			"scale": [1.4, 1.4, 1.2]
+		},
+		"firstperson_lefthand": {
+			"rotation": [103.94, -77.43, 101.94],
+			"translation": [2.5, 0, -1.5],
+			"scale": [1.11, 1.34, 1.2]
+		},
+		"gui": {
+			"rotation": [0, 0, -45],
+			"translation": [-3.75, -4.75, 0],
+			"scale": [1.2, 1.2, 1.2]
+		},
+		"head": {
+			"translation": [0.5, 9.25, 0]
+		},
+		"fixed": {
+			"translation": [0, -4.75, 0]
+		}
+	}
+}
