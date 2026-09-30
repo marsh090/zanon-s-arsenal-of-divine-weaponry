@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "type=bottom,waterlogged=false": { "model": "zanons_arsenal:block/dark_metal_slab" },
+    "type=bottom,waterlogged=true": { "model": "zanons_arsenal:block/dark_metal_slab" },
+    "type=double,waterlogged=false": { "model": "zanons_arsenal:block/dark_metal" },
+    "type=double,waterlogged=true": { "model": "zanons_arsenal:block/dark_metal" },
+    "type=top,waterlogged=false": { "model": "zanons_arsenal:block/dark_metal_slab_top" },
+    "type=top,waterlogged=true": { "model": "zanons_arsenal:block/dark_metal_slab_top" }
+  }
+}

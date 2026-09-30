@@ -9,5 +9,12 @@
   "rarity.zanons_arsenal.legendary": "Legendary",
   "key.category.zanons_arsenal.arsenal": "Zanon's Arsenal",
   "key.zanons_arsenal.skill": "Weapon Skill",
-  "key.zanons_arsenal.mode": "Weapon Mode"
+  "key.zanons_arsenal.mode": "Weapon Mode",
+  "item.zanons_arsenal.murasama_vault_key": "Murasama Vault Key",
+  "block.zanons_arsenal.dark_metal": "Dark Metal",
+  "block.zanons_arsenal.rusted_metal": "Rusted Metal",
+  "block.zanons_arsenal.dark_metal_slab": "Dark Metal Slab",
+  "block.zanons_arsenal.factory_light": "Factory Light",
+  "block.zanons_arsenal.murasama_vault": "Murasama Vault",
+  "block.zanons_arsenal.opened_murasama_vault": "Opened Murasama Vault"
 }

@@ -16,7 +16,16 @@ public final class ModTabs {
             .title(Component.translatable("itemGroup.zanons_arsenal"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ModItems.MURASAMA.get().getDefaultInstance())
-            .displayItems((parameters, output) -> output.accept(ModItems.MURASAMA.get()))
+            .displayItems((parameters, output) -> {
+                output.accept(ModItems.MURASAMA.get());
+                output.accept(ModItems.VAULT_KEY.get());
+                output.accept(ModBlocks.DARK_METAL.get());
+                output.accept(ModBlocks.RUSTED_METAL.get());
+                output.accept(ModBlocks.DARK_METAL_SLAB.get());
+                output.accept(ModBlocks.FACTORY_LIGHT.get());
+                output.accept(ModBlocks.MURASAMA_VAULT.get());
+                output.accept(ModBlocks.OPENED_MURASAMA_VAULT.get());
+            })
             .build());
 
     private ModTabs() {

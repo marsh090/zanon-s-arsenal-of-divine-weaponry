@@ -1,0 +1,53 @@
+{
+  "spawn_range": 4,
+  "total_mobs": 8.0,
+  "simultaneous_mobs": 2.0,
+  "ticks_between_spawn": 40,
+  "loot_tables_to_eject": [
+    {
+      "data": "zanons_arsenal:murasama_vault_trial",
+      "weight": 1
+    }
+  ],
+  "spawn_potentials": [
+    {
+      "data": {
+        "entity": {
+          "id": "minecraft:zombie",
+          "Health": 100.0,
+          "attributes": [
+            {
+              "id": "minecraft:max_health",
+              "base": 100.0
+            },
+            {
+              "id": "minecraft:attack_damage",
+              "base": 12.0
+            }
+          ],
+          "equipment": {
+            "feet": { "id": "minecraft:netherite_boots", "count": 1 },
+            "legs": { "id": "minecraft:netherite_leggings", "count": 1 },
+            "chest": { "id": "minecraft:netherite_chestplate", "count": 1 },
+            "head": { "id": "minecraft:netherite_helmet", "count": 1 }
+          },
+          "drop_chances": {
+            "feet": 0.0,
+            "legs": 0.0,
+            "chest": 0.0,
+            "head": 0.0
+          },
+          "active_effects": [
+            {
+              "id": "minecraft:speed",
+              "amplifier": 0,
+              "duration": 1000000,
+              "show_particles": false
+            }
+          ]
+        }
+      },
+      "weight": 1
+    }
+  ]
+}

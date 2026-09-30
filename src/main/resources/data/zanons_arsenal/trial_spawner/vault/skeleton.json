@@ -1,0 +1,43 @@
+{
+  "spawn_range": 4,
+  "total_mobs": 7.0,
+  "simultaneous_mobs": 2.0,
+  "ticks_between_spawn": 40,
+  "loot_tables_to_eject": [
+    {
+      "data": "zanons_arsenal:murasama_vault_trial",
+      "weight": 1
+    }
+  ],
+  "spawn_potentials": [
+    {
+      "data": {
+        "entity": {
+          "id": "minecraft:skeleton",
+          "Health": 80.0,
+          "attributes": [
+            {
+              "id": "minecraft:max_health",
+              "base": 80.0
+            }
+          ],
+          "equipment": {
+            "mainhand": {
+              "id": "minecraft:bow",
+              "count": 1,
+              "components": {
+                "minecraft:enchantments": {
+                  "minecraft:power": 1
+                }
+              }
+            }
+          },
+          "drop_chances": {
+            "mainhand": 0.0
+          }
+        }
+      },
+      "weight": 1
+    }
+  ]
+}

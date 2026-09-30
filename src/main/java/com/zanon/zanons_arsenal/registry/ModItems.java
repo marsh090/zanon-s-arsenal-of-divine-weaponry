@@ -6,6 +6,9 @@ import java.util.Optional;
 import com.zanon.zanons_arsenal.ZanonsArsenal;
 import com.zanon.zanons_arsenal.weapon.MurasamaItem;
 
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
@@ -22,6 +25,7 @@ public final class ModItems {
 
     public static final DeferredItem<MurasamaItem> MURASAMA = ITEMS.registerItem("murasama", MurasamaItem::new, props -> props
             .stacksTo(1)
+            .enchantable(15)
             .fireResistant()
             .component(DataComponents.UNBREAKABLE, Unit.INSTANCE)
             .component(ModComponents.SHEATHED.get(), true)
@@ -37,6 +41,15 @@ public final class ModItems {
                     Optional.of(SoundEvents.SHIELD_BREAK)
             ))
     );
+
+    public static final DeferredItem<Item> VAULT_KEY = ITEMS.registerSimpleItem("murasama_vault_key", props -> props.stacksTo(16));
+
+    public static final DeferredItem<BlockItem> DARK_METAL = ITEMS.registerSimpleBlockItem(ModBlocks.DARK_METAL);
+    public static final DeferredItem<BlockItem> RUSTED_METAL = ITEMS.registerSimpleBlockItem(ModBlocks.RUSTED_METAL);
+    public static final DeferredItem<BlockItem> DARK_METAL_SLAB = ITEMS.registerSimpleBlockItem(ModBlocks.DARK_METAL_SLAB);
+    public static final DeferredItem<BlockItem> FACTORY_LIGHT = ITEMS.registerSimpleBlockItem(ModBlocks.FACTORY_LIGHT);
+    public static final DeferredItem<BlockItem> MURASAMA_VAULT = ITEMS.registerSimpleBlockItem(ModBlocks.MURASAMA_VAULT);
+    public static final DeferredItem<BlockItem> OPENED_MURASAMA_VAULT = ITEMS.registerSimpleBlockItem(ModBlocks.OPENED_MURASAMA_VAULT);
 
     private ModItems() {
     }

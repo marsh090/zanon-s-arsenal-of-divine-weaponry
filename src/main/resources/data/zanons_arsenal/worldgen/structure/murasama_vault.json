@@ -1,0 +1,7 @@
+{
+  "type": "zanons_arsenal:murasama_vault",
+  "biomes": "#minecraft:is_overworld",
+  "step": "vegetal_decoration",
+  "spawn_overrides": {},
+  "terrain_adaptation": "none"
+}

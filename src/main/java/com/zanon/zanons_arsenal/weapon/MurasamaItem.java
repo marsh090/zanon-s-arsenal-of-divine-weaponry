@@ -2,11 +2,16 @@ package com.zanon.zanons_arsenal.weapon;
 
 import java.util.function.Consumer;
 
+import com.zanon.zanons_arsenal.ZanonsArsenal;
 import com.zanon.zanons_arsenal.registry.ModComponents;
 import com.zanon.zanons_arsenal.registry.ModParticles;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.damagesource.DamageType;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -39,6 +44,10 @@ public class MurasamaItem extends Item implements ArsenalItem {
     /** Attacks per second. A vanilla sword is 1.6. */
     public static final double MELEE_SPEED = 2.2D;
     public static final float SKILL_DAMAGE = 50.0F;
+    private static final ResourceKey<DamageType> SKILL_DAMAGE_TYPE = ResourceKey.create(
+            Registries.DAMAGE_TYPE,
+            Identifier.fromNamespaceAndPath(ZanonsArsenal.MOD_ID, "murasama_skill")
+    );
     /** Ten seconds. */
     public static final int SKILL_COOLDOWN_TICKS = 200;
     public static final double SKILL_RANGE = 5.5D;
@@ -163,7 +172,7 @@ public class MurasamaItem extends Item implements ArsenalItem {
             if (block.getType() != HitResult.Type.MISS) {
                 continue;
             }
-            if (entity.hurtServer(level, player.damageSources().playerAttack(player), SKILL_DAMAGE)) {
+            if (entity.hurtServer(level, player.damageSources().source(SKILL_DAMAGE_TYPE, player), SKILL_DAMAGE)) {
                 spawnHitBurst(level, center);
             }
         }

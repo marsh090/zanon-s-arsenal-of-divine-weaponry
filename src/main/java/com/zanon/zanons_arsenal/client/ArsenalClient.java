@@ -2,6 +2,7 @@ package com.zanon.zanons_arsenal.client;
 
 import com.zanon.zanons_arsenal.ZanonsArsenal;
 import com.zanon.zanons_arsenal.client.particle.RedSlashParticle;
+import com.zanon.zanons_arsenal.registry.ModMenus;
 import com.zanon.zanons_arsenal.registry.ModParticles;
 
 import net.minecraft.client.renderer.entity.player.AvatarRenderer;
@@ -12,11 +13,17 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterConditionalItemModelPropertyEvent;
 import net.neoforged.neoforge.client.event.RegisterKeyMappingsEvent;
+import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
 @EventBusSubscriber(modid = ZanonsArsenal.MOD_ID, value = Dist.CLIENT)
 public final class ArsenalClient {
     private ArsenalClient() {
+    }
+
+    @SubscribeEvent
+    public static void registerScreens(RegisterMenuScreensEvent event) {
+        event.register(ModMenus.OPENED_VAULT.get(), OpenedVaultScreen::new);
     }
 
     @SubscribeEvent

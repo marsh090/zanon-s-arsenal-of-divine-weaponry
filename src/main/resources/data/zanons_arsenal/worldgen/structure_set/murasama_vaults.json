@@ -1,0 +1,12 @@
+{
+  "structures": [
+    {
+      "structure": "zanons_arsenal:murasama_vault",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "zanons_arsenal:east_of_ancient_city",
+    "salt": 743001
+  }
+}
